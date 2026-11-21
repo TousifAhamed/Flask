@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template
 from admin.second import second
 
@@ -9,4 +10,4 @@ def test():
     return "<h1>Test</h1>"
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=os.environ.get("FLASK_DEBUG") == "1")
